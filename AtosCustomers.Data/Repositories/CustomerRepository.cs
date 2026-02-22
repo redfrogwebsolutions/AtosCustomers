@@ -5,6 +5,12 @@ namespace AtosCustomers.Data.Repositories;
 
 public class CustomerRepository(CustomersDbContext dataContext) : ICustomerRepository
 {
+    public async Task<Customer?> GetByIdAsync(Guid id)
+    {
+        var customer = await dataContext.Customers.FirstOrDefaultAsync(c => c.Id == id);
+        return customer;
+    }
+    
     public async Task<IEnumerable<Customer>> GetAllAsync()
     {
         return await dataContext.Customers.ToListAsync();

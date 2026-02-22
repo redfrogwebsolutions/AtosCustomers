@@ -12,11 +12,6 @@ namespace AtosCustomers.Api.Controllers
     {
         private readonly ILogger<CustomersController> _logger = logger;
 
-        public async Task<string> Get()
-        {
-            return await Task.FromResult("Hello from CustomersController");
-        }
-
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CustomerResponse>>> GetAllAsync()
         {
@@ -27,7 +22,7 @@ namespace AtosCustomers.Api.Controllers
             {
                 Id = c.Id,
                 FirstName = c.FirstName,
-                SurnameEmail = c.Surname
+                Surname = c.Surname
             }));
         }
 
@@ -39,7 +34,7 @@ namespace AtosCustomers.Api.Controllers
                 var addedCustomer = await customerRepository.AddAsync(new Customer
                     {
                         FirstName = customer.FirstName,
-                        Surname = customer.SurnameEmail
+                        Surname = customer.Surname
                     }
                 );
                 //I will return 'CreatedAtAction' but then I will need add GetById what is not on the controllers list 
@@ -48,12 +43,35 @@ namespace AtosCustomers.Api.Controllers
                 {
                     Id = addedCustomer.Id,
                     FirstName = addedCustomer.FirstName,
-                    SurnameEmail = addedCustomer.Surname
+                    Surname = addedCustomer.Surname
                 });
             }
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpDelete("{id:guid}")]
+        public async Task<ActionResult> DeleteAsync(Guid id)
+        {
+            try
+            {
+                var customer = await customerRepository.GetByIdAsync(id);
+
+                if (customer == null)
+                {
+                    return NotFound();
+                }
+                
+                await customerRepository.DeleteAsync(id);
+                
+                return NoContent();
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
             }
         }
         

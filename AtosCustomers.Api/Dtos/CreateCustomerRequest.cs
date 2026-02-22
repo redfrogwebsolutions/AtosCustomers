@@ -1,7 +1,12 @@
+using System.Text.Json.Serialization;
+
 namespace AtosCustomers.Api.Dtos;
 
 public class CreateCustomerRequest
 {
-    public string FirstName { get; set; }
-    public string SurnameEmail { get; set; }
+    [JsonPropertyName("firstName")]
+    public string FirstName { get; init; }
+    
+    [JsonPropertyName("surname")]
+    public string Surname { get; init; }
 }
