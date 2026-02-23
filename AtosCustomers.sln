@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtosCustomers.Api", "AtosCu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtosCustomers.Data", "AtosCustomers.Data\AtosCustomers.Data.csproj", "{8A1250F6-49FC-4802-ABD6-0EE8F7778FDE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtosCustomers.Tests.Data", "AtosCustomers.Tests.Data\AtosCustomers.Tests.Data.csproj", "{2EE87C6C-0D33-40AA-B740-14F8883DA818}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtosCustomers.Tests.Api", "AtosCustomers.Tests.Api\AtosCustomers.Tests.Api.csproj", "{57AC54AA-D1EA-4133-8CE1-FEBE8D4D5421}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{8A1250F6-49FC-4802-ABD6-0EE8F7778FDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A1250F6-49FC-4802-ABD6-0EE8F7778FDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A1250F6-49FC-4802-ABD6-0EE8F7778FDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EE87C6C-0D33-40AA-B740-14F8883DA818}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EE87C6C-0D33-40AA-B740-14F8883DA818}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EE87C6C-0D33-40AA-B740-14F8883DA818}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EE87C6C-0D33-40AA-B740-14F8883DA818}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57AC54AA-D1EA-4133-8CE1-FEBE8D4D5421}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57AC54AA-D1EA-4133-8CE1-FEBE8D4D5421}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57AC54AA-D1EA-4133-8CE1-FEBE8D4D5421}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57AC54AA-D1EA-4133-8CE1-FEBE8D4D5421}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

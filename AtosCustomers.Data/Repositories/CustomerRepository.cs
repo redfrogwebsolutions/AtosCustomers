@@ -11,7 +11,7 @@ public class CustomerRepository(CustomersDbContext dataContext) : ICustomerRepos
         return customer;
     }
     
-    public async Task<IEnumerable<Customer>> GetAllAsync()
+    public async Task<List<Customer>> GetAllAsync()
     {
         return await dataContext.Customers.ToListAsync();
     }
