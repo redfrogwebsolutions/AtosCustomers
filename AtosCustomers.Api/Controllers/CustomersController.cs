@@ -10,7 +10,7 @@ namespace AtosCustomers.Api.Controllers
     [ApiController]
     public class CustomersController(ILogger<CustomersController> logger, ICustomerRepository customerRepository) : ControllerBase
     {
-        [HttpGet]
+        [HttpGet("GetAllCustomers")]
         public async Task<ActionResult<IEnumerable<CustomerResponse>>> GetAllAsync()
         {
             try
@@ -39,7 +39,7 @@ namespace AtosCustomers.Api.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("AddCustomer")]
         public async Task<ActionResult<CreatedCustomerResponse>> AddCustomer(CreateCustomerRequest customer)
         {
             try
@@ -73,7 +73,7 @@ namespace AtosCustomers.Api.Controllers
             }
         }
 
-        [HttpDelete("{id:guid}")]
+        [HttpDelete("DeleteCustomer/{id:guid}")]
         public async Task<ActionResult> DeleteAsync(Guid id)
         {
             try
@@ -98,8 +98,6 @@ namespace AtosCustomers.Api.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
-        
-        
 
     }
 

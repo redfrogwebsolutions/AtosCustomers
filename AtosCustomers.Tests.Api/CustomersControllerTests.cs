@@ -1,8 +1,3 @@
-// csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AtosCustomers.Api.Controllers;
 using AtosCustomers.Api.Dtos;
 using AtosCustomers.Data.Model;
@@ -11,7 +6,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
-using Xunit;
 
 namespace AtosCustomers.Tests.Api
 {
