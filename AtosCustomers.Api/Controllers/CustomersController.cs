@@ -1,7 +1,6 @@
 using AtosCustomers.Api.Dtos;
 using AtosCustomers.Data.Model;
 using AtosCustomers.Data.Repositories;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AtosCustomers.Api.Controllers

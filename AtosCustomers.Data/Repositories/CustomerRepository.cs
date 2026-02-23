@@ -28,8 +28,6 @@ public class CustomerRepository(CustomersDbContext dataContext) : ICustomerRepos
             throw new ArgumentException("Customer must have a first name and surname.");
         }
         
-        //customer.Id = Guid.NewGuid();
-        
         dataContext.Customers.Add(customer);
         await dataContext.SaveChangesAsync();
         return customer;

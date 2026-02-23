@@ -5,11 +5,11 @@ namespace AtosCustomers.Api.Dtos;
 public class CustomerResponse
 {
     [JsonPropertyName("id")]
-    public Guid Id { get; init; }
+    public required Guid Id { get; init; }
     
     [JsonPropertyName("firstName")]
-    public string FirstName { get; init; }
+    public required string FirstName { get; init; }
     
     [JsonPropertyName("surname")]
-    public string Surname { get; init; }
+    public required string Surname { get; init; }
 }
